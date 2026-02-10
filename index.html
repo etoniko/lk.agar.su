@@ -229,7 +229,7 @@
         .type-selection input[type="radio"]:checked + span { background: var(--primary); color: white; display: block; width: 100%; height: 100%; border-radius: 12px;padding: 10px; }
         .form-group { margin-bottom: 24px; }
         .form-group label { font-weight: 500; margin-bottom: 8px; display: block; }
-        input[type="text"], input[type="password"]/*, input[type="email"] */{
+        input[type="text"], input[type="password"], input[type="email"]{
             width: 100%; padding: 16px; border: 1px solid var(--border);
             border-radius: 12px; font-size: 1rem;
         }
@@ -605,7 +605,7 @@
                             <span>Согласен с <a href="https://agar.su/rules" target="_blank">правилами пользования,<a href="https://agar.su/offer" target="_blank"> публичной офертой</a> и <a href="https://agar.su/privacy" target="_blank">политикой конфиденциальности</a></span>
                         </label>
                     </div>
-					<!-- <div class="form-group">
+					 <div class="form-group">
     <label for="email">
         Email (обязательно)
         <span class="tooltip-icon">
@@ -615,7 +615,7 @@
     </label>
     <input type="email" id="email" placeholder="example@mail.com" required>
     <p id="emailError" class="error"></p>
-</div> -->
+</div> 
 
                     <button id="payBtn" type="submit" disabled>Оплатить</button>
                     <p id="formError" class="error"></p>
@@ -695,7 +695,7 @@ function blockForbiddenChars(input) {
   });
 }
 
-/*const emailInput = document.getElementById("email");
+const emailInput = document.getElementById("email");
 emailInput.addEventListener("input", () => {
   hideError('emailError');
   calculateCost(); // чтобы кнопка не активировалась без валидного email
@@ -713,7 +713,7 @@ emailInput.addEventListener("blur", () => {
   } else {
     hideError('emailError');
   }
-});*/
+});
 		
 const nicknameInput = document.getElementById("nickname");
 blockForbiddenChars(nicknameInput);
@@ -916,8 +916,8 @@ function calculateCost() {
 
   const calculator = document.getElementById('calculator');
   const buyButton = document.getElementById('payBtn');
-  /*const email = emailInput.value.trim();
-  const emailValid = email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);*/
+  const email = emailInput.value.trim();
+  const emailValid = email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 	
     if (total > 0 && (password || file || invisibleNickCheckbox.checked)) {
     buyButton.textContent = `КУПИТЬ ЗА ${total} РУБЛЕЙ`;
@@ -944,7 +944,7 @@ document.getElementById("paymentForm").addEventListener("submit", async (e) => {
   const password = passwordInput.value.trim();
   const file = fileInput.files[0];
   const serviceType = document.querySelector('input[name="serviceType"]:checked')?.value || '';
- /* const email = emailInput.value.trim();
+  const email = emailInput.value.trim();
   
   if (!email) {
     showError('formError', 'Введите email для получения чека');
@@ -953,7 +953,7 @@ document.getElementById("paymentForm").addEventListener("submit", async (e) => {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     showError('formError', 'Некорректный email');
     return;
-  }*/
+  }
 
   if (!nickname) {
     showError('formError', 'Введите ник/клан.');
