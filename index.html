@@ -973,7 +973,7 @@ document.getElementById("paymentForm").addEventListener("submit", async (e) => {
   formData.append("name", nickname);
   formData.append("amount", amount);
   formData.append("serviceType", serviceType);
-  //formData.append("email", email);
+  formData.append("email", email);
   if (password) formData.append("password", password);
   if (invisibleNickCheckbox.checked) formData.append("invisible", "1");
 
