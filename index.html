@@ -473,8 +473,8 @@
                     <div class="front">
                         <i class="material-icons icon">image</i>
                         <h3>Обычный скин</h3>
-                        <div class="price">50 ₽</div>
-                        <div class="clan-price">для клана: 100 ₽</div>
+                        <div class="price">100 ₽</div>
+                        <div class="clan-price">для клана: 200 ₽</div>
                     </div>
                     <div class="back">
                         <img src="https://api.agar.su/skins/3.png" alt="Пример">
@@ -485,8 +485,8 @@
                     <div class="front">
                         <i class="material-icons icon">vpn_key</i>
                         <h3>Пароль</h3>
-                        <div class="price">50 ₽</div>
-                        <div class="clan-price">для клана: 100 ₽</div>
+                        <div class="price">100 ₽</div>
+                        <div class="clan-price">для клана: 200 ₽</div>
                     </div>
                     <div class="back">
                         <p>Защита ника.<br>Никто не сможет войти под вашим ником без пароля (до 5 символов).</p>
@@ -496,8 +496,8 @@
                     <div class="front">
                         <i class="material-icons icon">animation</i>
                         <h3>GIF скин</h3>
-                        <div class="price">5 000 ₽</div>
-                        <div class="clan-price">для клана: 10 000 ₽</div>
+                        <div class="price">10 000 ₽</div>
+                        <div class="clan-price">для клана: 20 000 ₽</div>
                     </div>
                     <div class="back">
                         <img src="https://agar.su/assets/photo/console.gif" alt="Анимированный GIF">
@@ -508,8 +508,8 @@
                     <div class="front">
                         <i class="material-icons icon">visibility_off</i>
                         <h3>Невидимый ник</h3>
-                        <div class="price">250 ₽</div>
-                        <div class="clan-price">для клана: 500 ₽</div>
+                        <div class="price">500 ₽</div>
+                        <div class="clan-price">для клана: 1 000 ₽</div>
                     </div>
                     <div class="back">
                         <img src="https://agar.su/assets/photo/invisible.png" alt="Невидимый ник" style="border-radius: 0px;width: 100%;">
@@ -589,7 +589,7 @@
                     <div class="form-group">
                         <label>
                             <input type="checkbox" id="invisibleNick">
-                            Невидимый ник (250 ₽)
+                            Невидимый ник (500 ₽)
                         </label>
                     </div>
                     <div id="calculator" style="display:none;">
@@ -894,12 +894,12 @@ function calculateCost() {
     return;
   }
 
-  let passwordCost = password ? 50 : 0;
-  let invisibleCost = invisibleNickCheckbox.checked ? 250 : 0;
+  let passwordCost = password ? 100 : 0;
+  let invisibleCost = invisibleNickCheckbox.checked ? 500 : 0;
   let skinCost = 0;
   let skinText = 'Скин: 0 ₽';
   if (file) {
-    skinCost = file.type === 'image/gif' ? 5000 : 50;
+    skinCost = file.type === 'image/gif' ? 10000 : 100;
     skinText = `Скин: ${skinCost * multiplier} ₽ (${file.type === 'image/gif' ? 'GIF' : 'PNG/JPG'})`;
   }
     const total = (passwordCost + skinCost + invisibleCost) * multiplier;
